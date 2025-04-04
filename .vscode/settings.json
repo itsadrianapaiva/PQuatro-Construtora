@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "notebook.formatOnSave.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.experimental.debug": true,
+  "tailwindCSS.experimental.configFile": "./tailwind.config.mjs"
+}
