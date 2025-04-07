@@ -38,7 +38,7 @@ const Header = () => {
                   spy
                   smooth
                   className="cursor-pointer"
-                  activeClass="text-accent"
+                  activeClass="text-[#02c87f]"
                 >
                   {link.name}
                 </ScrollLink>
