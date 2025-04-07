@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { RiFacebookFill, RiInstagramFill } from "react-icons/ri";
 
 const socials = [
@@ -18,9 +16,15 @@ const Socials = ({ containerStyles, iconStyles }) => {
     <div className={`${containerStyles}`}>
       {socials.map((item, index) => {
         return (
-          <Link href={item.path} key={index} className={`${iconStyles}`}>
+          <a
+            href={item.path}
+            key={index}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${iconStyles}`}
+          >
             {item.icon}
-          </Link>
+          </a>
         );
       })}
     </div>

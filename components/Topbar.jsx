@@ -16,7 +16,12 @@ const Topbar = () => {
               <div className="flex h-8 w-8 items-center justify-center bg-primary text-white">
                 <RiPhoneFill />
               </div>
-              <p className="font-medium text-white">(67) 9335-2525</p>
+              <a
+                href="tel:6793352525"
+                className="font-medium text-white hover:underline"
+              >
+                (67) 9335-2525
+              </a>
             </div>
 
             {/* mail */}
@@ -24,9 +29,12 @@ const Topbar = () => {
               <div className="flex h-8 w-8 items-center justify-center bg-primary text-white">
                 <RiMailFill />
               </div>
-              <p className="font-medium text-white">
+              <a
+                href="mailto:pquatroconstrutora@gmail.com"
+                className="font-medium text-white hover:underline"
+              >
                 pquatroconstrutora@gmail.com
-              </p>
+              </a>
             </div>
           </div>
 
