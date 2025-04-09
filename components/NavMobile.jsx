@@ -12,6 +12,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import Logo from "./Logo";
 import Socials from "./Socials";
 import { Link as ScrollLink } from "react-scroll";
+import Button from "./Button";
 
 const links = [
   {
@@ -79,8 +80,12 @@ const NavMobile = () => {
               );
             })}
           </ul>
+          <div className="mt-10">
+            {/* btn */}
+            <Button text="Solicite um orçamento" />
+          </div>
           {/* socials */}
-          <Socials containerStyles="text-white text-xl flex gap-6 mt-10" />
+          <Socials containerStyles="text-white text-xl flex gap-6 mt-4" />
         </div>
       </SheetContent>
     </Sheet>

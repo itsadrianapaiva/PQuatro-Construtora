@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section className="relative h-[70vh] bg-hero bg-cover bg-center bg-no-repeat">
       {/* overlay gradient */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-l from-black/0 via-black/50 to-black/70"></div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-l from-black/10 via-black/70 to-black/90"></div>
       <div className="container mx-auto flex h-full items-center">
         <div className="z-20 mx-auto flex max-w-[608px] flex-col items-center text-center text-white xl:mx-0 xl:items-start xl:text-left">
           <h1 className="h1 mb-4 text-white">
