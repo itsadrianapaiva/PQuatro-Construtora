@@ -14,16 +14,14 @@ const barlow = Barlow({
 });
 
 export const metadata = {
-  title: "P Construtora",
+  title: "P Quatro Construtora",
   description: "Referência em Construções de Alto Padrão",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSans.variable} ${barlow.variable} antialiased`}
-      >
+      <body className={`${dmSans.variable} ${barlow.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -1,3 +1,4 @@
+import React from "react";
 import { RiFacebookFill, RiInstagramFill } from "react-icons/ri";
 
 const socials = [
@@ -23,7 +24,9 @@ const Socials = ({ containerStyles, iconStyles }) => {
             rel="noopener noreferrer"
             className={`${iconStyles}`}
           >
-            {item.icon}
+            {React.cloneElement(item.icon, {
+              style: { width: "20px", height: "20px" },
+            })}
           </a>
         );
       })}
