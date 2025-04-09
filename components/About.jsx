@@ -38,9 +38,9 @@ const About = () => {
           <div className="flex-1 xl:flex xl:justify-center">
             <div className="relative xl:h-[493px] xl:w-[444px]">
               {/* bg */}
-              <div className="absolute -left-4 -top-4 -z-10 hidden h-[515px] w-[444px] bg-accent xl:flex"></div>
+              <div className="absolute -left-4 -top-4 -z-10 hidden h-[440px] w-[444px] bg-accent xl:flex"></div>
               <Image
-                src={"/assets/img/about/img1.jpeg"}
+                src={"/assets/img/about/img2.jpeg"}
                 width={444}
                 height={492}
                 alt={"mato grosso do sul"}
