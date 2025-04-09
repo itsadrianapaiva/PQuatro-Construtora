@@ -6,6 +6,7 @@ import { RiArrowRightUpLine } from "react-icons/ri";
 //components
 import Logo from "./Logo";
 import NavMobile from "./NavMobile";
+import Button from "./Button";
 
 const links = [
   {
@@ -32,7 +33,7 @@ const links = [
 
 const Header = () => {
   return (
-    <header className="sticky top-0 bg-primary py-4">
+    <header className="bg-primary py-4">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* logo */}
@@ -61,14 +62,7 @@ const Header = () => {
               })}
             </ul>
             {/* btn */}
-            <button className="group flex h-[50px] w-[200px] min-w-[200px] items-center justify-between bg-white py-[5px] pl-[10px] pr-[5px]">
-              <div className="flex-1 text-center font-primary text-sm font-bold uppercase tracking-[1.2px] text-primary">
-                Entre em contato
-              </div>
-              <div className="flex h-11 w-11 items-center justify-center bg-primary">
-                <RiArrowRightUpLine className="text-whote text-xl transition-all duration-200 group-hover:rotate-45" />
-              </div>
-            </button>
+            <Button text="Entre em Contato" />
           </nav>
 
           {/* mobile nav */}
