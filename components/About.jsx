@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="pt-16 xl:pt-32" id="about">
       <div className="container mx-auto">
-        <div className="flex flex-col gap-12 xl:flex-row xl:items-center xl:gap-0">
+        <div className="flex flex-col items-center gap-12 xl:flex-row xl:gap-0">
           {/* text */}
           <div className="flex-1">
             <div className="max-w-[540px]">
