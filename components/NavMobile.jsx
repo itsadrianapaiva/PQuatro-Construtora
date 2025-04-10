@@ -8,11 +8,10 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { RiMenu3Fill } from "react-icons/ri";
+import { RiMenu3Fill, RiArrowRightUpLine } from "react-icons/ri";
 import Logo from "./Logo";
 import Socials from "./Socials";
 import { Link as ScrollLink } from "react-scroll";
-import Button from "./Button";
 
 const links = [
   {
@@ -82,7 +81,14 @@ const NavMobile = () => {
           </ul>
           <div className="mt-10">
             {/* btn */}
-            <Button text="Solicite um orçamento" />
+            <button className="group flex h-[54px] w-[210px] min-w-[200px] items-center justify-between bg-white py-[5px] pl-[10px] pr-[5px]">
+              <div className="flex-1 text-center font-primary text-sm font-bold uppercase tracking-[1.2px] text-primary">
+                solicitar orçamento
+              </div>
+              <div className="flex h-11 w-11 items-center justify-center bg-primary">
+                <RiArrowRightUpLine className="text-xl text-white transition-all duration-200 group-hover:rotate-45" />
+              </div>
+            </button>
           </div>
           {/* socials */}
           <Socials containerStyles="text-white text-xl flex gap-6 mt-4" />

@@ -170,7 +170,7 @@ const Services = () => {
                         ))}
                       </ul>
                       {/* btn */}
-                      <Button text="Saiba Mais" />
+                      <Button text="Entre em contato" />
                     </div>
                   </div>
                 </div>
