@@ -67,7 +67,7 @@ const Work = () => {
                       className="text-white"
                       style={{ width: "20px", height: "20px" }}
                     />
-                    <p className="max-w-[60%] text-xs">{item.description}</p>
+                    <p className="xl:max-w-[60%] text-sm xl:text-xs">{item.description}</p>
                   </div>
                 </div>
                 <Link
