@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="z-20 mx-auto flex max-w-[608px] flex-col items-center text-center text-white xl:mx-0 xl:items-start xl:text-left">
           <h1 className="h1 mb-4 text-white">
             Sua Referência em Reformas de
-            <span className="text-orange"> Alto Padrão</span>
+            <span className="border-b border-orange italic"> Alto Padrão</span>
           </h1>
           <p className="mb-9">
             Do conceito a realização, nós asseguramos que cada detalhe é
