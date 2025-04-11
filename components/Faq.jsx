@@ -55,8 +55,8 @@ const Faq = () => {
       <div className="container mx-auto">
         {/* text */}
         <div className="mx-auto max-w-[540px] text-center xl:mb-20">
-          <Pretitle text="Faq" center />
-          <h2 className="h2 mb-3">Tem dúvidas? Nós temos as respostas!</h2>
+          <Pretitle text="Dúvidas" center />
+          <h2 className="h2 mb-3">Tem perguntas? Nós temos as respostas!</h2>
           <p className="mx-auto mb-11 max-w-[480px]">
             Estamos aqui para ajudar você a entender melhor o nosso trabalho e
             como podemos tornar seu sonho em realidade. Confira as perguntas
@@ -64,7 +64,7 @@ const Faq = () => {
           </p>
         </div>
         {/* faq items */}
-        <ul className="w-full flex flex-col">
+        <ul className="flex w-full flex-col">
           {faqItemsData.map((item, index) => {
             return (
               <li key={index}>

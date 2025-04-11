@@ -91,7 +91,7 @@ const NavMobile = () => {
             />
           </div>
           {/* socials */}
-          <Socials containerStyles="text-white text-xl flex gap-6 mt-4" />
+          <Socials containerStyles="text-white text-xl flex gap-6 mt-6" />
         </div>
       </SheetContent>
     </Sheet>
