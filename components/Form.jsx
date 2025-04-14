@@ -47,27 +47,32 @@ const Form = () => {
 
   // Form submission handler
   const onSubmit = async (data) => {
-    setIsSubmitting(true);
-    setSubmitStatus(null);
     try {
-      const response = await fetch("/.netlify/functions/submit-form", {
+      console.log("Submitting:", data);
+      const functionUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:8888/.netlify/functions/submit-form"
+          : "/.netlify/functions/submit-form";
+      console.log("Fetching URL:", functionUrl);
+      const response = await fetch(functionUrl, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
+        mode: "cors",
       });
-      if (response.ok) {
-        setSubmitStatus("success");
-        reset();
-      } else {
-        throw new Error("Submission failed");
+      console.log("Response status:", response.status);
+      const responseData = await response.json();
+      console.log("Response data:", responseData);
+      if (!response.ok) {
+        throw new Error(responseData.message || "Submission failed");
       }
+      setSubmitStatus(
+        "Formulário enviado com sucesso. Logo entraremos em contato!",
+      );
+      reset(); // Clear form after success
     } catch (error) {
-      console.error("Submission error:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
+      console.error("Submission error:", error.message);
+      setSubmitStatus("Erro ao enviar o formulário. Tente novamente.");
     }
   };
 
@@ -182,12 +187,11 @@ const Form = () => {
         />
 
         {/* Submission Status Messages */}
-        {submitStatus === "success" && (
-          <p className="text-green-500">Formulário enviado com sucesso!</p>
-        )}
-        {submitStatus === "error" && (
-          <p className="text-red-500">
-            Erro ao enviar o formulário. Tente novamente.
+        {submitStatus && (
+          <p
+            className={`mt-4 ${submitStatus.includes("Erro") ? "text-red-500" : "text-green-500"}`}
+          >
+            {submitStatus}
           </p>
         )}
       </div>

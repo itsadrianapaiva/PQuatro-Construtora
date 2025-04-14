@@ -1,11 +1,14 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
   functions = "netlify/functions"
 
 [dev]
   framework = "next"
+  command = "npm run dev"
+  targetPort = 3000
   port = 8888
+  autoLaunch = false
 
 [[redirects]]
   from = "/*"
