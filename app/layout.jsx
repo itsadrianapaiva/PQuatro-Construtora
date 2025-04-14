@@ -1,5 +1,6 @@
 import { DM_Sans, Barlow } from "next/font/google";
 import "./globals.css";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const dmSans = DM_Sans({
   variable: "--font-dmSans",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${dmSans.variable} ${barlow.variable} antialiased`}>
         {children}
+        <WhatsAppIcon />
       </body>
     </html>
   );
