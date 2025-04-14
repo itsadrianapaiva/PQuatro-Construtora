@@ -62,12 +62,14 @@ const Work = () => {
                   <h4 className="font-primary font-semibold uppercase tracking-[1px] text-white">
                     {item.name}
                   </h4>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-2">
                     <RiCheckboxCircleFill
                       className="text-white"
                       style={{ width: "20px", height: "20px" }}
                     />
-                    <p className="xl:max-w-[60%] text-sm xl:text-xs">{item.description}</p>
+                    <p className="text-xs md:max-w-[90%] md:text-sm lg:max-w-lg xl:max-w-[60%] xl:text-xs">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
                 <Link

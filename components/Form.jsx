@@ -192,7 +192,7 @@ const Form = () => {
         {/* Submission Status Messages */}
         {submitStatus && (
           <p
-            className={`mt-4 ${submitStatus.includes("Erro") ? "text-red-500" : "text-green-500"}`}
+            className={`mt-2 ${submitStatus.includes("Erro") ? "text-red-500" : "text-green-500"}`}
           >
             {submitStatus}
           </p>
