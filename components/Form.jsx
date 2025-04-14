@@ -47,6 +47,7 @@ const Form = () => {
 
   // Form submission handler
   const onSubmit = async (data) => {
+    setIsSubmitting(true);
     try {
       console.log("Submitting:", data);
       const functionUrl =
@@ -73,6 +74,8 @@ const Form = () => {
     } catch (error) {
       console.error("Submission error:", error.message);
       setSubmitStatus("Erro ao enviar o formulário. Tente novamente.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
