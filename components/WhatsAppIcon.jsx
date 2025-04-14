@@ -10,10 +10,10 @@ export default function WhatsAppIcon() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 left-6 z-50 flex items-center justify-center"
+      className="fixed bottom-14 right-6 z-50 flex items-center justify-center"
       aria-label="Contacte-nos no WhatsApp"
     >
-      <span className="absolute z-10 h-8 w-8 animate-ping rounded-full bg-green-500/40 opacity-75 sm:h-16 sm:w-16"></span>
+      <span className="absolute z-10 h-12 w-12 animate-ping rounded-full bg-green-500/40 opacity-75 sm:h-16 sm:w-16"></span>
       <img
         src="/Assets/whatsapp.png"
         alt="WhatsApp"

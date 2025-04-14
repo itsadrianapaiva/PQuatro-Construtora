@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
       </div>
       {/* copyright */}
-      <div className="container mx-auto flex flex-col items-center justify-between gap-6 border-t border-border/10 py-12 xl:flex-row xl:px-0">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-2 border-t border-border/10 py-4 xl:flex-row xl:px-0">
         <p className="text-secondary">
           &copy; {new Date().getFullYear()} Todos os direitos reservados.
         </p>
