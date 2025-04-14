@@ -5,7 +5,7 @@ import FaqItem from "./FaqItem";
 
 const faqItemsData = [
   {
-    title: "Qual o diferencial vocês oferecem?",
+    title: "Qual diferencial vocês oferecem?",
     description:
       "Queremos fazer parte da construção do seu sonho. Por isso, oferecemos um atendimento personalizado e próximo, para entender suas necessidades e desejos. Oferecemos uma gestão completa includindo físico, financeiro e pessoal. Contamos com a melhor equipe de profissionais do mercadp, capacitados e especializados em casas de alto padrão. E também oferemos um acompanhamento integral da obra, com indicadores de desempenho, custo e produtividade para que você possa acompanhar o andamento da sua obra de forma transparente e segura.",
   },
