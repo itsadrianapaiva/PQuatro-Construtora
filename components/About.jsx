@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Pretitle from "./Pretitle";
 import Button from "./Button";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const About = () => {
   return (
@@ -9,7 +11,13 @@ const About = () => {
         <div className="flex flex-col items-center gap-12 xl:flex-row xl:gap-0">
           {/* text */}
           <div className="flex-1">
-            <div className="max-w-[540px]">
+            <motion.div
+              variants={fadeIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.2 }}
+              className="max-w-[540px]"
+            >
               {/* pretitle */}
               <Pretitle text="Sobre Nós" />
               <h2 className="h2 mb-6">Padrão Americano de Qualidade</h2>
@@ -32,10 +40,16 @@ const About = () => {
               </div>
               {/* btn */}
               <Button text="Fale Conosco" />
-            </div>
+            </motion.div>
           </div>
           {/* img */}
-          <div className="flex-1 xl:flex xl:justify-center">
+          <motion.div
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.8 }}
+            className="flex-1 xl:flex xl:justify-center"
+          >
             <div className="relative xl:h-[493px] xl:w-[444px]">
               {/* bg */}
               <div className="absolute -left-4 -top-4 -z-10 hidden h-[440px] w-[444px] bg-accent xl:flex"></div>
@@ -46,7 +60,7 @@ const About = () => {
                 alt={"mato grosso do sul"}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

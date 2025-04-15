@@ -31,7 +31,7 @@ const Home = () => {
   console.log(headerActive);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Topbar />
       {/* static header */}
       <div className="relative z-10">

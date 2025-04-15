@@ -1,17 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import {
-  RiMapPin2Fill,
-  RiPhoneFill,
-  RiMailFill,
-  RiArrowRightLine,
-} from "react-icons/ri";
+import { RiMapPin2Fill, RiPhoneFill, RiMailFill } from "react-icons/ri";
 import Socials from "./Socials";
 import Logo from "./Logo";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const Footer = () => {
   return (
-    <footer className="mt-16 bg-primary xl:mt-32">
+    <motion.footer
+      variants={fadeIn("up", 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.1 }}
+      className="mt-16 bg-primary xl:mt-32"
+    >
       <div className="container mx-auto">
         <div className="flex flex-col justify-center gap-[60px] py-16 xl:flex-row xl:gap-[30px] xl:py-[100px]">
           {/* logo e text */}
@@ -54,7 +55,7 @@ const Footer = () => {
           iconStyles="hover:text-accent transition-all"
         />
       </div>
-    </footer>
+    </motion.footer>
   );
   s;
 };

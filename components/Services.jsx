@@ -11,6 +11,8 @@ import {
   PiUserGearFill,
 } from "react-icons/pi";
 import Pretitle from "./Pretitle";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const serviceData = [
   {
@@ -93,12 +95,23 @@ const serviceData = [
   },
 ];
 
+const fadeInVariant = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.4, delay: 0.1 } },
+};
+
 const Services = () => {
   const [activeTab, setActiveTab] = useState("construção");
   return (
     <section className="pt-16 xl:pt-32" id="services">
       <div className="container mx-auto">
-        <div className="mx-auto mb-20 max-w-[540px] text-center">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+          className="mx-auto mb-20 max-w-[540px] text-center"
+        >
           <Pretitle text="Nossos Serviços" center />
           <h2 className="h2 mb-3">Soluções Que Oferecemos</h2>
           <p className="mx-auto mb-11 max-w-[480px]">
@@ -107,77 +120,90 @@ const Services = () => {
             garante resultados excepcionais em cada projeto, seja residencial ou
             comercial.
           </p>
-        </div>
+        </motion.div>
 
         {/* tabs */}
-        <Tabs
-          defaultValue="construção"
-          onValueChange={(value) => setActiveTab(value)}
-          className="flex w-full flex-col gap-[30px] xl:flex-row"
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
         >
-          <TabsList className="grid h-full w-full grid-cols-1 gap-[30px] rounded-none bg-transparent p-0 md:grid-cols-2 xl:w-[345px] xl:grid-cols-1">
-            {serviceData.map((item) => {
-              return (
-                <TabsTrigger
-                  value={item.name}
-                  key={item.name}
-                  className="relative flex h-[100px] w-full items-center rounded-none p-0 shadow-custom outline-none"
-                >
-                  <div
-                    className={`absolute left-0 flex h-[100px] w-[100px] items-center justify-center ${activeTab === item.name ? "bg-orange text-primary" : "bg-accent text-white"}`}
+          <Tabs
+            defaultValue="construção"
+            onValueChange={(value) => setActiveTab(value)}
+            className="flex w-full flex-col gap-[30px] xl:flex-row"
+          >
+            <TabsList className="grid h-full w-full grid-cols-1 gap-[30px] rounded-none bg-transparent p-0 md:grid-cols-2 xl:w-[345px] xl:grid-cols-1">
+              {serviceData.map((item) => {
+                return (
+                  <TabsTrigger
+                    value={item.name}
+                    key={item.name}
+                    className="relative flex h-[100px] w-full items-center rounded-none p-0 shadow-custom outline-none"
                   >
-                    {React.cloneElement(item.icon, {
-                      style: { width: "30px", height: "30px" },
-                    })}
-                  </div>
-                  <div className="trancking-[.6px] ml-16 w-[100px] font-primary text-base font-semibold uppercase">
-                    {item.name}
-                  </div>
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
-          {/* tabs content */}
-          <div className="h-[490px] flex-1 bg-white p-[30px] shadow-custom">
-            {serviceData.map((item) => (
-              <TabsContent key={item.name} value={item.name} className="m-0">
-                <div className="flex flex-col gap-[30px] md:flex-row">
-                  {/* images */}
-                  <div className="flex gap-5 md:flex-col xl:gap-[30px]">
-                    {item.thumbs.map((thumb, index) => (
-                      <div
-                        key={index}
-                        className="relative h-[140px] w-[140px] xl:h-[200px] xl:w-[200px]"
-                      >
-                        <Image src={thumb.url} fill alt="thumb image" />
-                      </div>
-                    ))}
-                  </div>
-                  {/* text & button */}
-                  <div className="">
-                    <div className="">
-                      <h3 className="h3 mb-6">{item.title}</h3>
-                      <p className="mb-10">{item.description}</p>
-                      {/* service list */}
-                      <ul className="mb-10 grid grid-cols-2 gap-4">
-                        {item.serviceList.map((service, index) => (
-                          <li key={index} className="flex items-center gap-4">
-                            <div className="h-[6px] w-[6px] bg-accent"></div>
-                            <div className="font-medium capitalize text-primary">
-                              {service}
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                      {/* btn */}
-                      <Button text="Entre em contato" />
+                    <div
+                      className={`absolute left-0 flex h-[100px] w-[100px] items-center justify-center ${activeTab === item.name ? "bg-orange text-primary" : "bg-accent text-white"}`}
+                    >
+                      {React.cloneElement(item.icon, {
+                        style: { width: "30px", height: "30px" },
+                      })}
                     </div>
-                  </div>
-                </div>
-              </TabsContent>
-            ))}
-          </div>
-        </Tabs>
+                    <div className="trancking-[.6px] ml-16 w-[100px] font-primary text-base font-semibold uppercase">
+                      {item.name}
+                    </div>
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+            {/* tabs content */}
+            <div className="h-[490px] flex-1 bg-white p-[30px] shadow-custom">
+              {serviceData.map((item) => (
+                <TabsContent key={item.name} value={item.name} className="m-0">
+                  <motion.div
+                    variants={fadeInVariant}
+                    initial="hidden"
+                    whileInView="show"
+                    exit="hidden"
+                    className="flex flex-col gap-[30px] md:flex-row"
+                  >
+                    {/* images */}
+                    <div className="flex gap-5 md:flex-col xl:gap-[30px]">
+                      {item.thumbs.map((thumb, index) => (
+                        <div
+                          key={index}
+                          className="relative h-[140px] w-[140px] xl:h-[200px] xl:w-[200px]"
+                        >
+                          <Image src={thumb.url} fill alt="thumb image" />
+                        </div>
+                      ))}
+                    </div>
+                    {/* text & button */}
+                    <div className="">
+                      <div className="">
+                        <h3 className="h3 mb-6">{item.title}</h3>
+                        <p className="mb-10">{item.description}</p>
+                        {/* service list */}
+                        <ul className="mb-10 grid grid-cols-2 gap-4">
+                          {item.serviceList.map((service, index) => (
+                            <li key={index} className="flex items-center gap-4">
+                              <div className="h-[6px] w-[6px] bg-accent"></div>
+                              <div className="font-medium capitalize text-primary">
+                                {service}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                        {/* btn */}
+                        <Button text="Entre em contato" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </TabsContent>
+              ))}
+            </div>
+          </Tabs>
+        </motion.div>
       </div>
     </section>
   );

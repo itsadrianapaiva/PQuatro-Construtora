@@ -54,7 +54,13 @@ const Faq = () => {
     <section className="pt-16 xl:pt-32">
       <div className="container mx-auto">
         {/* text */}
-        <div className="mx-auto max-w-[540px] text-center xl:mb-20">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+          className="mx-auto max-w-[540px] text-center xl:mb-20"
+        >
           <Pretitle text="Dúvidas" center />
           <h2 className="h2 mb-3">Tem perguntas? Nós temos as respostas!</h2>
           <p className="mx-auto mb-11 max-w-[480px]">
@@ -62,14 +68,21 @@ const Faq = () => {
             como podemos tornar seu sonho em realidade. Confira as perguntas
             mais frequentes e entre em contato se precisar de mais informações.
           </p>
-        </div>
+        </motion.div>
         {/* faq items */}
         <ul className="flex w-full flex-col">
           {faqItemsData.map((item, index) => {
             return (
-              <li key={index}>
+              <motion.li
+                key={index}
+                variants={faqItemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.8 }}
+                custom={index} //pass index to control stagger effect
+              >
                 <FaqItem title={item.title} description={item.description} />
-              </li>
+              </motion.li>
             );
           })}
         </ul>

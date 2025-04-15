@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Pretitle from "./Pretitle";
 import { RiArrowRightUpLine, RiCheckboxCircleFill } from "react-icons/ri";
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 const workData = [
   {
@@ -23,7 +25,7 @@ const workData = [
     href: "",
   },
   {
-    img: "/assets/img/work/consulting.jpeg",
+    img: "/assets/img/work/consulting.jpg",
     name: "Piscinas",
     description: "Construção e reforma de piscinas.",
     href: "",
@@ -34,16 +36,28 @@ const Work = () => {
   return (
     <div className="pt-16 xl:pt-32" id="projects">
       <div className="container mx-auto">
-        <div className="mx-auto max-w-[540px] text-center xl:mb-20">
+        <motion.div
+          variants={fadeIn("up", 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+          className="mx-auto max-w-[540px] text-center xl:mb-20"
+        >
           <Pretitle text="Nossos Projetos" center />
           <h2 className="h2 mb-3">Projetos em Destaque</h2>
           <p className="mx-auto mb-11 max-w-[480px]">
             Conheça alguns dos nossos projetos mais recentes e veja como
             transformamos espaços com nossa experiência e dedicação.
           </p>
-        </div>
+        </motion.div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      <motion.div
+        variants={fadeIn("up", 0.3)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4"
+      >
         {workData.map((item, index) => {
           return (
             <div
@@ -82,7 +96,7 @@ const Work = () => {
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 };
