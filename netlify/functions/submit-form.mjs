@@ -38,7 +38,7 @@ const transporter = nodemailer.createTransport({
 
 export async function handler(event) {
   const headers = {
-    "Access-Control-Allow-Origin": "http://localhost:3000",
+    "Access-Control-Allow-Origin": "http://localhost:3001",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
   };
@@ -75,7 +75,7 @@ export async function handler(event) {
     };
   }
 
-  const { name, email, phone, projectType, message } = parsedBody;
+  const { name, email, phone, projectType, message, isTest } = parsedBody;
 
   if (!name || !email || !phone) {
     console.log("Missing required fields:", { name, email, phone });
@@ -83,6 +83,16 @@ export async function handler(event) {
       statusCode: 400,
       headers,
       body: JSON.stringify({ message: "Missing required fields" }),
+    };
+  }
+
+  // Handle test submissions
+  if (isTest) {
+    console.log("Test mode: Skipping Google Sheets and email");
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({ message: "Form submitted successfully" }),
     };
   }
 

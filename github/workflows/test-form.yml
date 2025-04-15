@@ -1,0 +1,40 @@
+name: Weekly Form Test
+
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Monday, 9 AM UTC (~6 AM Campo Grande, MS)
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  test-form:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run form test
+        run: node scripts/test-form.js
+        env:
+          FORM_URL: ${{ secrets.FORM_URL }}
+
+      - name: Send email on failure
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: P4 Construtora Form Test Failed
+          body: The weekly form test for P4 Construtora failed. Check GitHub Actions for details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          to: ${{ secrets.EMAIL_USERNAME }}
+          from: P4 Construtora Tests <${{ secrets.EMAIL_USERNAME }}>
