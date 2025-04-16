@@ -7,25 +7,25 @@ import { fadeIn } from "../variants";
 
 const workData = [
   {
-    img: "/assets/img/work/restoration.jpeg",
+    img: "/optimized/work/restoration.webp",
     name: "Restauração",
     description: "Restauração histórica ou por danos.",
     href: "",
   },
   {
-    img: "/assets/img/work/construction.jpeg",
+    img: "/optimized/work/construction.webp",
     name: "Construção",
     description: "Construção de estruturas residenciais e comerciais.",
     href: "",
   },
   {
-    img: "/assets/img/work/renovation.jpg",
+    img: "/optimized/work/renovation.webp",
     name: "Reforma",
     description: "Reformas de estruturas residenciais e comerciais.",
     href: "",
   },
   {
-    img: "/assets/img/work/consulting.jpg",
+    img: "/optimized/work/consulting.webp",
     name: "Piscinas",
     description: "Construção e reforma de piscinas.",
     href: "",
@@ -69,6 +69,7 @@ const Work = () => {
                 fill
                 className="object-cover"
                 alt="projects"
+                loading="lazy"
                 quality={100}
               />
               <div className="absolute bottom-4 flex h-[84px] w-[90%] items-center justify-between bg-primary text-white transition-all duration-500 md:translate-y-[108px] md:group-hover:translate-y-0">

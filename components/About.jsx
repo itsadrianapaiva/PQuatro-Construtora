@@ -31,7 +31,7 @@ const About = () => {
               </p>
               <div className="mb-10 flex w-max flex-col text-right">
                 <Image
-                  src="/assets/img/about/signature.png"
+                  src="/optimized/about/signature.webp"
                   width={184}
                   height={38}
                   alt="signature"
@@ -54,10 +54,11 @@ const About = () => {
               {/* bg */}
               <div className="absolute -left-4 -top-4 -z-10 hidden h-[440px] w-[444px] bg-accent xl:flex"></div>
               <Image
-                src={"/assets/img/about/img2.jpeg"}
+                src={"/optimized/about/img2.webp"}
                 width={444}
                 height={492}
                 alt={"mato grosso do sul"}
+                loading="lazy"
               />
             </div>
           </motion.div>

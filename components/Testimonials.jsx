@@ -38,9 +38,10 @@ const Testimonials = () => {
           >
             <div className="xl-flex relative xl:h-[380px] xl:w-[550px]">
               <Image
-                src="/assets/img/testimonials/img3.jpg"
+                src="/optimized/testimonials/img3.webp"
                 fill
                 className="object-cover"
+                loading="lazy"
                 alt="testimonials"
                 quality={100}
               />

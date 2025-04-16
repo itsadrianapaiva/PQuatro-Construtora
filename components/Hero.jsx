@@ -8,7 +8,7 @@ const Hero = () => {
       {/* overlay gradient */}
       <div className="absolute inset-0 z-10 bg-gradient-to-l from-black/10 via-black/70 to-black/90"></div>
       <div className="container mx-auto flex h-full items-center">
-        <div className="z-20 mx-auto flex max-w-[608px] flex-col items-center text-center text-white xl:mx-0 xl:items-start xl:text-left">
+        <div className="z-20 mx-auto flex max-w-[608px] flex-col items-center text-center text-white xl:mx-0 xl:items-start xl:text-left text-balance">
           <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
@@ -29,9 +29,10 @@ const Hero = () => {
             viewport={{ once: false, amount: 0.8 }}
             className="mb-9"
           >
-            Do conceito a realização, nós asseguramos que cada detalhe é
-            otimizado para excelência e durabilidade, construindo soluções que
-            inspiram confiança e permanecem intactas por anos.
+            Do conceito a realização de projetos residenciais e comerciais, nós
+            asseguramos que cada detalhe é otimizado para excelência e
+            durabilidade, construindo soluções que inspiram confiança e
+            permanecem intactas por anos.
           </motion.p>
           {/* btn */}
           <motion.div

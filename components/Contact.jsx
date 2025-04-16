@@ -22,7 +22,7 @@ const Contact = () => {
                 Entre em Contato
               </h4>
               <p className="mb-9">
-                Nosso time está ansioso para ouvir sobre o seu projeto.
+                Construção de alto padrão é com o nosso time.
               </p>
               {/* contact items */}
               <div className="mb-16 flex flex-col gap-[40px]">

@@ -32,8 +32,8 @@ const serviceData = [
       "Acabamentos e revestimentos",
     ],
     thumbs: [
-      { url: "/assets/img/services/thumb-1.jpg" },
-      { url: "/assets/img/services/thumb-3.jpg" },
+      { url: "/optimized/services/thumb-1.webp" },
+      { url: "/optimized/services/thumb-3.webp" },
     ],
   },
   {
@@ -52,8 +52,8 @@ const serviceData = [
       "Reforma de telhados e coberturas",
     ],
     thumbs: [
-      { url: "/assets/img/services/thumb-2.jpg" },
-      { url: "/assets/img/services/thumb-4.jpg" },
+      { url: "/optimized/services/thumb-2.webp" },
+      { url: "/optimized/services/thumb-4.webp" },
     ],
   },
   {
@@ -71,8 +71,8 @@ const serviceData = [
       "Restauracão de telhados",
     ],
     thumbs: [
-      { url: "/assets/img/services/thumb-5.jpg" },
-      { url: "/assets/img/services/thumb-6.jpg" },
+      { url: "/optimized/services/thumb-5.webp" },
+      { url: "/optimized/services/thumb-6.webp" },
     ],
   },
   {
@@ -89,8 +89,8 @@ const serviceData = [
       "Instalação de iluminação",
     ],
     thumbs: [
-      { url: "/assets/img/services/thumb-7.jpg" },
-      { url: "/assets/img/services/thumb-8.jpg" },
+      { url: "/optimized/services/thumb-7.webp" },
+      { url: "/optimized/services/thumb-8.webp" },
     ],
   },
 ];
@@ -174,7 +174,12 @@ const Services = () => {
                           key={index}
                           className="relative h-[140px] w-[140px] xl:h-[200px] xl:w-[200px]"
                         >
-                          <Image src={thumb.url} fill alt="thumb image" />
+                          <Image
+                            src={thumb.url}
+                            fill
+                            alt="thumb image"
+                            loading="lazy"
+                          />
                         </div>
                       ))}
                     </div>
