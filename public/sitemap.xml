@@ -3,7 +3,7 @@
   <url>
     <loc>https://pquatroconstrutora.netlify.app/</loc>
     <lastmod>2025-04-16</lastmod>
-    <changefreq>monthly</ - <lastmod>2025-04-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
@@ -19,19 +19,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://pquatroconstrutora.netlify.app/#testimonials</loc>
-    <lastmod>2025-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pquatroconstrutora.netlify.app/#work</loc>
+    <loc>https://pquatroconstrutora.netlify.app/#projects</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://pquatroconstrutora.netlify.app/#contact</loc>
+    <lastmod>2025-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pquatroconstrutora.netlify.app/#home</loc>
     <lastmod>2025-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
