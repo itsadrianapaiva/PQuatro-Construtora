@@ -1,7 +1,6 @@
 "use client";
 
 import { Link as ScrollLink } from "react-scroll";
-import { RiArrowRightUpLine } from "react-icons/ri";
 
 //components
 import Logo from "./Logo";
